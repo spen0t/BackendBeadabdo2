@@ -1,0 +1,42 @@
+﻿@model Húsüzem.Models.Husika
+
+@{
+    ViewData["Title"] = "Törlés";
+}
+
+<h1>Biztosan törölni akarod?</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Terméknév)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Terméknév)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ár)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ár)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Alapanyag)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Alapanyag)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GyártásIdeje)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GyártásIdeje)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Törlés" class="btn btn-danger" /> |
+        <a asp-action="Index">Mégse</a>
+    </form>
+</div>

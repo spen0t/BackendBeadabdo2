@@ -1,0 +1,48 @@
+﻿@model Húsüzem.Models.Husika
+
+@{
+    ViewData["Title"] = "Új Hozzáadása";
+}
+
+<h1>Új adat megadása</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Terméknév" class="control-label"></label>
+                <input asp-for="Terméknév" class="form-control" />
+                <span asp-validation-for="Terméknév" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ár" class="control-label"></label>
+                <input asp-for="Ár" class="form-control" />
+                <span asp-validation-for="Ár" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alapanyag" class="control-label"></label>
+                <input asp-for="Alapanyag" class="form-control" />
+                <span asp-validation-for="Alapanyag" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GyártásIdeje" class="control-label"></label>
+                <input asp-for="GyártásIdeje" class="form-control" />
+                <span asp-validation-for="GyártásIdeje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Hozzáad" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Mégse</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
